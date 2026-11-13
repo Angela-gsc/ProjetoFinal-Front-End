@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | Cine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cine</h1>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="perfil.html" aria-current="page">Meu perfil</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="perfil-usuario">
+            <img src="" alt="Foto de perfil do usuário">
+
+            <div>
+                <h2>Nome do usuário</h2>
+                <p>Bio do usuário</p>
+            </div>
+        </section>
+        
+        <section class="minha-colecao">
+            <h2>Minha coleção</h2>
+
+            <div class="colecao-links">
+                <button type="button" id="botao-favoritos">Meus favoritos</button>
+
+                <button type="button" id="botao-assistidos">Filmes assistidos</button>
+
+                <button type="button" id="botao-quero-assistir">Quero assistir</button>
+            </div>
+
+            <div id="favoritos" hidden>
+                <!--FIlmes serão adicionados pelo JS-->
+            </div>
+            <div id="assistidos" hidden>
+                <!--FIlmes serão adicionados pelo JS-->
+            </div>
+            <div id="quero-assistir" hidden>
+                <!--FIlmes serão adicionados pelo JS-->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Cine</p>
+        <nav aria-label="Navegação do rodapé">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="sobre.html#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
