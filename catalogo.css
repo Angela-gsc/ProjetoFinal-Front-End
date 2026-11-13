@@ -1,0 +1,174 @@
+/* Catálogo */
+.catalogo > p {
+    color: var(--texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.busca-filmes,
+.filtro-genero {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    vertical-align: top;
+}
+
+.busca-filmes {
+    width: min(100%, 340px);
+    margin-right: 1rem;
+}
+
+.filtro-genero {
+    width: min(100%, 240px);
+}
+
+.busca-filmes label,
+.filtro-genero label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.busca-filmes input,
+.filtro-genero select {
+    width: 100%;
+    padding: 0.7rem 0.95rem;
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color var(--transicao);
+}
+
+.busca-filmes input:focus,
+.filtro-genero select:focus {
+    border-color: var(--dourado);
+}
+
+.lista-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Estilo base para cards de filmes gerados via JS */
+.lista-filmes > *,
+.carrossel-filmes > * {
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: transform var(--transicao), border-color var(--transicao), background-color var(--transicao);
+}
+
+.lista-filmes > *:hover,
+.carrossel-filmes > *:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 197, 24, 0.45);
+    background-color: var(--bg-card-hover);
+}
+
+.carrossel-filmes > * {
+    min-width: 210px;
+}
+
+/* Indicação visual para ações selecionadas (favoritar, assistido, etc.) */
+.ativo,
+.favoritado,
+.selecionado,
+[aria-pressed="true"] {
+    background-color: var(--dourado) !important;
+    color: #0b0d13 !important;
+    border-color: var(--dourado) !important;
+    font-weight: 700;
+}
+
+/* Perfil do usuário */
+.perfil-usuario {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.perfil-usuario img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--dourado);
+    flex-shrink: 0;
+}
+
+.perfil-usuario h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.perfil-usuario p {
+    color: var(--texto-secundario);
+}
+
+/* Minha coleção */
+.colecao-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.colecao-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.5rem;
+    transition: transform var(--transicao), border-color var(--transicao), background-color var(--transicao);
+}
+
+.colecao-item:hover,
+.colecao-item:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--dourado);
+    background-color: var(--bg-card-hover);
+}
+
+.colecao-item h3 {
+    font-size: 1.15rem;
+    color: var(--dourado);
+    margin-bottom: 0.35rem;
+}
+
+.colecao-item p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.listas-colecao {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lista-colecao {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.5rem;
+    scroll-margin-top: 5.5rem;
+}
+
+.lista-colecao h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--borda);
+}
+
