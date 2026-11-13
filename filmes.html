@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Cine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cine</h1>
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="perfil.html">Meu perfil</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="catalogo">
+            <h2>Explorar filmes</h2>
+            <p>Descubra filmes para assistir.</p>
+
+            <div class="busca-filmes">
+                <label for="busca">Buscar filme:</label>
+                <input type="search" id="busca" name="busca" placeholder="Digite o nome do filme">
+            </div>
+
+            <div class="filtro-genero">
+                <label for="genero">Filtrar por gênero:</label>
+                <select id="genero" name="genero">
+                    <option value="todos">Todos os gêneros</option>
+                    <option value="acao">Ação</option>
+                    <option value="animacao">Animação</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="romance">Romance</option>
+                    <option value="terror">Terror</option>
+                </select>
+            </div>
+
+            <div class="lista-filmes">
+                <!--OS filmes serão adicionados pelo JS-->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Cine</p>
+        <nav aria-label="Navegação do rodapé">
+            <ul>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="sobre.html#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
