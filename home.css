@@ -1,0 +1,126 @@
+/* Apresentação (Hero) */
+.apresentacao {
+    background: radial-gradient(circle at top right, rgba(229, 9, 20, 0.2), transparent 55%),
+                linear-gradient(135deg, var(--bg-secundario), var(--bg-card));
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 3.5rem 2.5rem;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.apresentacao h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    max-width: 22ch;
+    margin-bottom: 0;
+}
+
+.apresentacao p {
+    color: var(--texto-secundario);
+    max-width: 58ch;
+    font-size: 1.05rem;
+}
+
+.apresentacao > a {
+    display: inline-block;
+    background-color: var(--destaque);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.apresentacao > a:hover,
+.apresentacao > a:focus-visible {
+    background-color: var(--destaque-hover);
+    transform: translateY(-2px);
+}
+
+.apresentacao details {
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 520px;
+    background-color: rgba(11, 13, 19, 0.55);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.apresentacao summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dourado);
+}
+
+.apresentacao details ul {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.apresentacao details a {
+    display: inline-block;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    transition: all var(--transicao);
+}
+
+.apresentacao details a:hover,
+.apresentacao details a:focus-visible {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: #ffffff;
+}
+
+/* Filmes em destaque (Carrossel) */
+.carrossel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.carrossel-filmes {
+    flex: 1;
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.25rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-card-hover) transparent;
+}
+
+.carrossel button.anterior,
+.carrossel button.proximo {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--borda);
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.carrossel button.anterior:hover,
+.carrossel button.proximo:hover {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+}
+

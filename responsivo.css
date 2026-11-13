@@ -1,0 +1,55 @@
+/* Responsividade - Tablets */
+@media (max-width: 900px) {
+    .colecao-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .apresentacao,
+    .sobre-cine,
+    .feedback {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Responsividade - Celulares */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 4%;
+    }
+
+    main {
+        padding: 1.5rem 4% 3rem;
+        gap: 2.75rem;
+    }
+
+    .busca-filmes {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .filtro-genero {
+        width: 100%;
+    }
+
+    .perfil-usuario {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .colecao-links {
+        grid-template-columns: 1fr;
+    }
+
+    .carrossel button.anterior,
+    .carrossel button.proximo {
+        width: 36px;
+        height: 36px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
