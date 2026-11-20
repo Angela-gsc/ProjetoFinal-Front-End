@@ -1,0 +1,895 @@
+:root {
+    --bg-principal: #0b0d13;
+    --bg-secundario: #131722;
+    --bg-card: #1a2030;
+    --bg-card-hover: #222a3f;
+    --borda: rgba(255, 255, 255, 0.1);
+    --texto-principal: #f3f4f6;
+    --texto-secundario: #a1a9b8;
+    --destaque: #e50914;
+    --destaque-hover: #ff1f2b;
+    --dourado: #f5c518;
+    --sucesso: #22c55e;
+    --sombra: 0 12px 30px rgba(0, 0, 0, 0.45);
+    --raio: 12px;
+    --transicao: 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+/* Cabeçalho */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(11, 13, 19, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--borda);
+    padding: 1rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--destaque);
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+header nav a {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--texto-secundario);
+    transition: background-color var(--transicao), color var(--transicao);
+}
+
+header nav a:hover,
+header nav a:focus-visible {
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+}
+
+header nav a[aria-current="page"] {
+    background-color: var(--destaque);
+    color: #ffffff;
+}
+
+header nav a[href="#final"] {
+    border: 1px solid var(--borda);
+    color: var(--dourado);
+}
+
+header nav a[href="#final"]:hover,
+header nav a[href="#final"]:focus-visible {
+    border-color: var(--dourado);
+    background-color: rgba(245, 197, 24, 0.12);
+}
+
+/* Conteúdo principal */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem 5% 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+section {
+    scroll-margin-top: 5.5rem;
+}
+
+section > h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--texto-principal);
+}
+
+/* Apresentação (Hero) */
+.apresentacao {
+    background: radial-gradient(circle at top right, rgba(229, 9, 20, 0.2), transparent 55%),
+                linear-gradient(135deg, var(--bg-secundario), var(--bg-card));
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 3.5rem 2.5rem;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.apresentacao h2 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    line-height: 1.2;
+    max-width: 22ch;
+    margin-bottom: 0;
+}
+
+.apresentacao p {
+    color: var(--texto-secundario);
+    max-width: 58ch;
+    font-size: 1.05rem;
+}
+
+.apresentacao > a {
+    display: inline-block;
+    background-color: var(--destaque);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.apresentacao > a:hover,
+.apresentacao > a:focus-visible {
+    background-color: var(--destaque-hover);
+    transform: translateY(-2px);
+}
+
+.apresentacao details {
+    margin-top: 0.5rem;
+    width: 100%;
+    max-width: 520px;
+    background-color: rgba(11, 13, 19, 0.55);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.apresentacao summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dourado);
+}
+
+.apresentacao details ul {
+    margin-top: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.apresentacao details a {
+    display: inline-block;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    transition: all var(--transicao);
+}
+
+.apresentacao details a:hover,
+.apresentacao details a:focus-visible {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+    color: #ffffff;
+}
+
+/* Filmes em destaque (Carrossel) */
+.carrossel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.carrossel-filmes {
+    flex: 1;
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 0.25rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-card-hover) transparent;
+}
+
+.carrossel button.anterior,
+.carrossel button.proximo {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--borda);
+    background-color: var(--bg-card);
+    color: var(--texto-principal);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.carrossel button.anterior:hover,
+.carrossel button.proximo:hover {
+    background-color: var(--destaque);
+    border-color: var(--destaque);
+}
+
+/* Catálogo */
+.catalogo > p {
+    color: var(--texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.busca-filmes,
+.filtro-genero {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    vertical-align: top;
+}
+
+.busca-filmes {
+    width: min(100%, 340px);
+    margin-right: 1rem;
+}
+
+.filtro-genero {
+    width: min(100%, 240px);
+}
+
+.busca-filmes label,
+.filtro-genero label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.busca-filmes input,
+.filtro-genero select {
+    width: 100%;
+    padding: 0.7rem 0.95rem;
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color var(--transicao);
+}
+
+.busca-filmes input:focus,
+.filtro-genero select:focus {
+    border-color: var(--dourado);
+}
+
+.lista-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Estilo base para cards de filmes gerados via JS */
+.lista-filmes > *,
+.carrossel-filmes > * {
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    transition: transform var(--transicao), border-color var(--transicao), background-color var(--transicao);
+}
+
+.lista-filmes > *:hover,
+.carrossel-filmes > *:hover {
+    transform: translateY(-4px);
+    border-color: rgba(245, 197, 24, 0.45);
+    background-color: var(--bg-card-hover);
+}
+
+.carrossel-filmes > * {
+    min-width: 210px;
+}
+
+/* Indicação visual para ações selecionadas (favoritar, assistido, etc.) */
+.ativo,
+.favoritado,
+.selecionado,
+[aria-pressed="true"] {
+    background-color: var(--dourado) !important;
+    color: #0b0d13 !important;
+    border-color: var(--dourado) !important;
+    font-weight: 700;
+}
+
+/* Perfil do usuário */
+.perfil-usuario {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.perfil-usuario img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--dourado);
+    flex-shrink: 0;
+}
+
+.perfil-usuario h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.25rem;
+}
+
+.perfil-usuario p {
+    color: var(--texto-secundario);
+}
+
+/* Minha coleção */
+.colecao-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.colecao-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.5rem;
+    transition: transform var(--transicao), border-color var(--transicao), background-color var(--transicao);
+}
+
+.colecao-item:hover,
+.colecao-item:focus-visible {
+    transform: translateY(-3px);
+    border-color: var(--dourado);
+    background-color: var(--bg-card-hover);
+}
+
+.colecao-item h3 {
+    font-size: 1.15rem;
+    color: var(--dourado);
+    margin-bottom: 0.35rem;
+}
+
+.colecao-item p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+.listas-colecao {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.lista-colecao {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.5rem;
+    scroll-margin-top: 5.5rem;
+}
+
+.lista-colecao h3 {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--borda);
+}
+
+/* Sobre o Cine */
+.sobre-cine {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 2rem 2.5rem;
+}
+
+.sobre-cine p + p {
+    margin-top: 1rem;
+}
+
+.sobre-cine p {
+    color: var(--texto-secundario);
+}
+
+/* Formulário de Feedback */
+.feedback {
+    background-color: var(--bg-secundario);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 2rem 2.5rem;
+}
+
+.feedback > p {
+    color: var(--texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feedback fieldset {
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.feedback legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: var(--dourado);
+}
+
+.feedback label {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.feedback input[type="text"],
+.feedback input[type="email"],
+.feedback textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    background-color: var(--bg-principal);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color var(--transicao);
+}
+
+.feedback input[type="text"]:focus,
+.feedback input[type="email"]:focus,
+.feedback textarea:focus {
+    border-color: var(--dourado);
+}
+
+.feedback input[type="range"] {
+    accent-color: var(--dourado);
+    cursor: pointer;
+}
+
+.feedback button[type="submit"] {
+    align-self: flex-start;
+    background-color: var(--destaque);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.85rem 1.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.feedback button[type="submit"]:hover,
+.feedback button[type="submit"]:focus-visible {
+    background-color: var(--destaque-hover);
+    transform: translateY(-2px);
+}
+
+.mensagem-confirmacao {
+    margin-top: 1.25rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 8px;
+    background-color: rgba(34, 197, 94, 0.14);
+    border: 1px solid var(--sucesso);
+    color: #bbf7d0;
+    font-weight: 500;
+}
+
+.mensagem-confirmacao[hidden] {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--bg-secundario);
+    border-top: 1px solid var(--borda);
+    padding: 2rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+footer > p:first-child {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--destaque);
+}
+
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+footer nav a {
+    transition: color var(--transicao);
+}
+
+footer nav a:hover,
+footer nav a:focus-visible {
+    color: var(--dourado);
+}
+
+/* Responsividade - Tablets */
+@media (max-width: 900px) {
+    .colecao-links {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .apresentacao,
+    .sobre-cine,
+    .feedback {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Responsividade - Celulares */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 4%;
+    }
+
+    main {
+        padding: 1.5rem 4% 3rem;
+        gap: 2.75rem;
+    }
+
+    .busca-filmes {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .filtro-genero {
+        width: 100%;
+    }
+
+    .perfil-usuario {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .colecao-links {
+        grid-template-columns: 1fr;
+    }
+
+    .carrossel button.anterior,
+    .carrossel button.proximo {
+        width: 36px;
+        height: 36px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* Complementos dos cards criados pelo JavaScript */
+.card-filme {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.poster-filme,
+.poster-placeholder {
+    width: 100%;
+    height: 260px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: linear-gradient(145deg, #252d40, #10141f);
+}
+
+.poster-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--texto-secundario);
+}
+
+.poster-placeholder span {
+    font-size: 3rem;
+}
+
+.poster-placeholder small {
+    font-size: 0.8rem;
+}
+
+.informacoes-filme {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    flex: 1;
+}
+
+.informacoes-filme h3 {
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.ano-filme,
+.generos-filme {
+    color: var(--dourado);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.sinopse-filme {
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+.acoes-filme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+.botao-lista {
+    border: 1px solid var(--borda);
+    background: var(--bg-secundario);
+    color: var(--texto-principal);
+    border-radius: 7px;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background-color var(--transicao), border-color var(--transicao);
+}
+
+.botao-lista:hover,
+.botao-lista:focus-visible {
+    border-color: var(--dourado);
+    background: var(--bg-card-hover);
+}
+
+.mensagem-vazia {
+    color: var(--texto-secundario);
+    margin-top: 1rem;
+}
+
+.avatar-perfil {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 2px solid var(--dourado);
+    background: var(--bg-card);
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.lista-colecao .lista-filmes:empty::after {
+    content: "Sua lista ainda está vazia.";
+    color: var(--texto-secundario);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .poster-filme,
+    .poster-placeholder {
+        height: 230px;
+    }
+
+    .acoes-filme {
+        flex-direction: column;
+    }
+
+    .botao-lista {
+        width: 100%;
+    }
+}
+
+
+/* Avaliação, comentários e edição de perfil */
+.card-filme.compacto .sinopse-filme {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.avaliacao {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.1rem;
+}
+
+.estrela {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    line-height: 1;
+    padding: 0.1rem;
+    color: var(--texto-secundario);
+    transition: color var(--transicao), transform var(--transicao);
+}
+
+.estrela:hover,
+.estrela:focus-visible {
+    color: var(--dourado);
+    transform: scale(1.15);
+}
+
+.estrela.preenchida {
+    color: var(--dourado);
+}
+
+.texto-nota {
+    margin-left: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--texto-secundario);
+}
+
+.comentarios {
+    border-top: 1px solid var(--borda);
+    padding-top: 0.5rem;
+}
+
+.comentarios summary {
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dourado);
+}
+
+.lista-comentarios {
+    margin: 0.6rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.lista-comentarios li {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    background-color: var(--bg-secundario);
+    color: var(--texto-secundario);
+    font-size: 0.85rem;
+    overflow-wrap: anywhere;
+}
+
+.remover-comentario {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.remover-comentario:hover,
+.remover-comentario:focus-visible {
+    color: var(--destaque-hover);
+}
+
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-comentario textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--bg-principal);
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    outline: none;
+}
+
+.form-comentario textarea:focus {
+    border-color: var(--dourado);
+}
+
+.info-perfil {
+    flex: 1;
+}
+
+.botao-editar-perfil {
+    border: 1px solid var(--borda);
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: border-color var(--transicao), background-color var(--transicao);
+}
+
+.botao-editar-perfil:hover,
+.botao-editar-perfil:focus-visible {
+    border-color: var(--dourado);
+    background-color: var(--bg-card-hover);
+}

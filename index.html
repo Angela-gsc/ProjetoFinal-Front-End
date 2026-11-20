@@ -3,62 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cine: descubra filmes, explore gêneros e organize sua coleção.">
     <title>Cine | Descubra novos filmes</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cine</h1>
         <nav aria-label="Navegação principal">
             <ul>
-                <li><a href="index.html" aria-current="page">Início</a></li>
-                <li><a href="perfil.html">Meu perfil</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="#inicio" aria-current="page">Início</a></li>
+                <li><a href="#destaques">Destaques</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#colecao">Minha coleção</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#feedback">Feedback</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <section class="apresentacao">
-            <h2>Descubra seu próximo filme favorito.</h2>
-            <p>Explore filmes, descubra novas produções e compartilhe suas opiniões sobre o mundo do cinema.</p>
-            <a href="filmes.html">Começar a explorar</a>
 
+    <main>
+        <section class="apresentacao" id="inicio">
+            <h2>Descubra seu próximo filme favorito.</h2>
+            <p>Explore filmes de diferentes gêneros, conheça novas histórias e organize aqueles que você deseja assistir.</p>
+            <a href="#catalogo">Explorar catálogo</a>
             <details>
-                <summary>Filtrar por gênero</summary>
+                <summary>Explorar por gênero</summary>
                 <ul>
-                    <li><a href="filmes.html?genero=acao">Ação</a></li>
-                    <li><a href="filmes.html?genero=animacao">Animação</a></li>
-                    <li><a href="filmes.html?genero=comedia">Comédia</a></li>
-                    <li><a href="filmes.html?genero=drama">Drama</a></li>
-                    <li><a href="filmes.html?genero=romance">Romance</a></li>
-                    <li><a href="filmes.html?genero=terror">Terror</a></li>
+                    <li><a href="#catalogo" data-genero-link="acao">Ação</a></li>
+                    <li><a href="#catalogo" data-genero-link="animacao">Animação</a></li>
+                    <li><a href="#catalogo" data-genero-link="comedia">Comédia</a></li>
+                    <li><a href="#catalogo" data-genero-link="drama">Drama</a></li>
+                    <li><a href="#catalogo" data-genero-link="romance">Romance</a></li>
+                    <li><a href="#catalogo" data-genero-link="terror">Terror</a></li>
                 </ul>
             </details>
         </section>
-        
-        <section class="filmes-destaque">
+
+        <section id="destaques">
             <h2>Filmes em destaque</h2>
-
             <div class="carrossel">
-                <button type="button" class="anterior" aria-label="Filmes anteriores">&#10094;</button>
-
-                <div class="carrossel-filmes">
-                    <!--Os cinco filmes em destaque serão adicionados pelo JS-->
-                </div>
-                    
-                <button type="button" class="proximo" aria-label="Próximos filmes">&#10095;</button>
+                <button class="anterior" id="anterior" type="button" aria-label="Filmes anteriores">‹</button>
+                <div class="carrossel-filmes" id="carrossel-filmes" aria-label="Carrossel de filmes"></div>
+                <button class="proximo" id="proximo" type="button" aria-label="Próximos filmes">›</button>
             </div>
         </section>
+
+        <section class="catalogo" id="catalogo">
+            <h2>Catálogo de filmes</h2>
+            <p>Pesquise pelo título ou pela sinopse e filtre os filmes por gênero.</p>
+
+            <div class="busca-filmes">
+                <label for="busca">Pesquisar filme</label>
+                <input type="search" id="busca" placeholder="Digite o nome de um filme...">
+            </div>
+
+            <div class="filtro-genero">
+                <label for="genero">Filtrar por gênero</label>
+                <select id="genero">
+                    <option value="todos">Todos os gêneros</option>
+                    <option value="acao">Ação</option>
+                    <option value="animacao">Animação</option>
+                    <option value="comedia">Comédia</option>
+                    <option value="drama">Drama</option>
+                    <option value="romance">Romance</option>
+                    <option value="terror">Terror</option>
+                </select>
+            </div>
+
+            <div class="lista-filmes" id="lista-filmes"></div>
+            <p id="mensagem-vazia" class="mensagem-vazia" hidden>Nenhum filme encontrado. Tente outra pesquisa ou gênero.</p>
+        </section>
+
+        <section class="perfil-usuario" id="perfil" aria-label="Perfil">
+            <div class="avatar-perfil" aria-hidden="true">🎬</div>
+            <div class="info-perfil">
+                <h2 id="perfil-nome">Sua experiência no Cine</h2>
+                <p id="perfil-bio">Favorite filmes, marque os que já assistiu e monte sua própria lista para assistir depois. Suas escolhas ficam salvas neste navegador.</p>
+            </div>
+            <button type="button" class="botao-editar-perfil" id="btn-editar-perfil">Editar perfil</button>
+        </section>
+
+        <section id="colecao">
+            <h2>Minha coleção</h2>
+            <p>Suas listas pessoais são atualizadas quando você interage com os botões dos filmes.</p>
+
+            <div class="colecao-links">
+                <a class="colecao-item" href="#favoritos">
+                    <h3>♥ Favoritos</h3>
+                    <p>Filmes que você marcou como favoritos.</p>
+                </a>
+                <a class="colecao-item" href="#assistidos">
+                    <h3>✓ Já assisti</h3>
+                    <p>Filmes que você já assistiu.</p>
+                </a>
+                <a class="colecao-item" href="#quero-assistir">
+                    <h3>＋ Quero assistir</h3>
+                    <p>Filmes que deseja assistir futuramente.</p>
+                </a>
+            </div>
+
+            <div class="listas-colecao">
+                <div class="lista-colecao" id="favoritos">
+                    <h3>♥ Meus favoritos</h3>
+                    <div class="lista-filmes" id="lista-favoritos"></div>
+                </div>
+                <div class="lista-colecao" id="assistidos">
+                    <h3>✓ Filmes assistidos</h3>
+                    <div class="lista-filmes" id="lista-assistidos"></div>
+                </div>
+                <div class="lista-colecao" id="quero-assistir">
+                    <h3>＋ Quero assistir</h3>
+                    <div class="lista-filmes" id="lista-quero-assistir"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre-cine" id="sobre">
+            <h2>Sobre o Cine</h2>
+            <p>O Cine é um projeto de catálogo de filmes desenvolvido para facilitar a descoberta de histórias de diferentes gêneros.</p>
+            <p>Aqui você pode pesquisar títulos, filtrar categorias e organizar uma coleção pessoal diretamente no navegador.</p>
+        </section>
+
+        <section class="feedback" id="feedback">
+            <h2>Envie seu feedback</h2>
+            <p>Conte o que achou do site. Este formulário funciona como demonstração no navegador e não envia os dados para um servidor.</p>
+
+            <form id="form-feedback">
+                <fieldset>
+                    <legend>Seus dados</legend>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Avaliação do site</legend>
+                    <label for="nota">Que nota você daria ao Cine? (0 a 10)</label>
+                    <input type="range" id="nota" name="nota" min="0" max="10" value="8">
+
+                    <label for="comentario">Comentário</label>
+                    <textarea id="comentario" name="comentario" rows="4" placeholder="Escreva sua opinião..." required></textarea>
+                </fieldset>
+
+                <button type="submit">Enviar feedback</button>
+            </form>
+            <p class="mensagem-confirmacao" id="feedback-confirmacao" role="status" hidden></p>
+        </section>
     </main>
-    <footer>
+
+    <footer id="final">
         <p>Cine</p>
-        <nav aria-label="Navegação do rodapé">
+        <p>Projeto acadêmico — catálogo de filmes.</p>
+        <nav aria-label="Links do rodapé">
             <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="sobre.html#feedback">Feedback</a></li>
+                <li><a href="#inicio">Voltar ao topo</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
-        <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
