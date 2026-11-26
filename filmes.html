@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo | Cine</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+    <header id="topo">
         <h1>Cine</h1>
         <nav aria-label="Navegação principal">
             <ul>
@@ -43,16 +44,12 @@
             <div class="lista-filmes">
                 <!--OS filmes serão adicionados pelo JS-->
             </div>
+            <p id="mensagem-vazia" hidden>Nenhum filme encontrado.</p>
         </section>
     </main>
     <footer>
         <p>Cine</p>
-        <nav aria-label="Navegação do rodapé">
-            <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="sobre.html#feedback">Feedback</a></li>
-            </ul>
-        </nav>
+        <a href="#topo">Voltar ao topo ↑</a>
         <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
     </footer>
 </body>

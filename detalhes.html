@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do filme | Cine</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Cine</h1>
-        <nav aria-label="Navegação prinicipal">
+        <nav aria-label="Navegação principal">
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <li><a href="perfil.html">Meu perfil</a></li>
@@ -30,9 +31,9 @@
             <p id="sinopse-filme"></p>
 
             <div class="acoes-filme">
-                <button type="button">Adicionar aos favoritos</button>
-                <button type="button">Marcar como assistido</button>
-                <button type="button">Quero assistir</button>
+                <button type="button" id="botao-favoritar">Adicionar aos favoritos</button>
+                <button type="button" id="botao-assistido">Marcar como assistido</button>
+                <button type="button" id="botao-lista">Quero assistir</button>
             </div>
 
             <div class="avaliacao-filme">
@@ -45,7 +46,7 @@
         <section class="comentarios">
             <h2>Comentários</h2>
 
-            <form>
+            <form id="form-comentario">
                 <label for="comentario">Deixe sua opinião:</label>
                 <textarea id="comentario" name="comentario" rows="5" placeholder="Escreva seu comentário..." required></textarea>
 
@@ -59,12 +60,6 @@
     </main>
     <footer>
         <p>Cine</p>
-        <nav aria-label="Navegação do rodapé">
-            <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="sobre.html#feedback">Feedback</a></li>
-            </ul>
-        </nav>
         <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
     </footer>
 </body>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil | Cine</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -19,7 +20,7 @@
     </header>
     <main>
         <section class="perfil-usuario">
-            <img src="" alt="Foto de perfil do usuário">
+            <img src="https://img.magnific.com/vetores-premium/ilustracao-plana-vetorial-em-escala-de-cinza-avatar-perfil-de-usuario-icone-de-pessoa-imagem-de-perfil-de-silhueta-neutra-de-genero-adequado-para-perfis-de-midia-social-icones-protetores-de-tela-e-como-um-modelo-x9xa_719432-2191.jpg?semt=ais_hybrid&w=740&q=80" alt="Foto de perfil do usuário">
 
             <div>
                 <h2>Nome do usuário</h2>
@@ -31,11 +32,11 @@
             <h2>Minha coleção</h2>
 
             <div class="colecao-links">
-                <button type="button" id="botao-favoritos">Meus favoritos</button>
+                <button type="button" class="colecao-item" id="botao-favoritos" aria-expanded="false">Meus favoritos</button>
 
-                <button type="button" id="botao-assistidos">Filmes assistidos</button>
+                <button type="button" class="colecao-item" id="botao-assistidos" aria-expanded="false">Filmes assistidos</button>
 
-                <button type="button" id="botao-quero-assistir">Quero assistir</button>
+                <button type="button" class="colecao-item" id="botao-quero-assistir" aria-expanded="false">Quero assistir</button>
             </div>
 
             <div id="favoritos" hidden>
@@ -51,12 +52,6 @@
     </main>
     <footer>
         <p>Cine</p>
-        <nav aria-label="Navegação do rodapé">
-            <ul>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="sobre.html#feedback">Feedback</a></li>
-            </ul>
-        </nav>
         <p>&copy; 2026 Cine. Todos os direitos reservados.</p>
     </footer>
 </body>
