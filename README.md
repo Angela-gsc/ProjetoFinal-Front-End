@@ -31,10 +31,9 @@ Um website com design moderno e responsivo desenvolvido com **HTML5**, **CSS3** 
 ```text
 ├── index.html       # Página inicial (Home) do site
 ├── perfil.html      # Área do usuário com listas de favoritos, assistidos e quero assistir
-├── sobre.html       # Página com informações sobre o site e um formulário de feedback
+├── sobre.html       # Página com informações sobre o site
+├── feedback.html    # Página com um formulário de feedback
 ├── filmes.html      # Catálogo completo de filmes
 ├── detalhes.html    # Página de exibição com os detalhes individuais de cada filme
 ├── style.css        # Estilos, variáveis e responsividade
-├── filmes.js        # Base de dados dos filmes cadastrados, separados por gênero
-└── script.js        # manipulação de estado e localStorage
-
+└── script.js        # Base de dados dos filmes cadastrados, separados por gênero; interatividade e localStorage.
